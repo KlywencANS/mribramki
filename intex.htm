@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Bramki logiczne</title>
+</head>
+<body>
+<script>
+
+    const setValues = ()=> {
+        const x1 = document.getElementById('v1').checked;
+        const x2 = document.getElementById('v2').checked;
+        const x3 = document.getElementById('v3').checked;
+        const x4 = document.getElementById('v4').checked;
+        const x12 = x1 && x2;
+        const x34 = (x3 || x4);
+        const y1 = Number(x34 && x4).toString();
+        const y2 = Number((!x12 || y1)).toString();
+        document.getElementById("para3").innerHTML=y1;
+        document.getElementById("para4").innerHTML=y2;
+    }
+
+    </script>
+<h1>Bramki logiczne</h1>
+<input type="checkbox" id="v1">
+<label for="v1">x1</label>
+<input type="checkbox" id="v2">
+<label for="v2">x2</label>
+<input type="checkbox" id="v3">
+<label for="v3">x3</label>
+<input type="checkbox" id="v4">
+<label for="v4">x4</label><br>
+<button type="button" onclick="document.getElementById('para1').innerHTML=setValues();">oblicz
+</button> <br>
+    <img src="Screenshot_1.png" alt="123">
+    <br>
+    <p id="para3"></p>
+    <p id="para4"></p>
+</body>
+</html>
